@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root { --red: #c91524; --deep-red: #920d19; --cream: #fff7f2; --ink: #272125; --muted: #766d70; --line: #e3d7d0; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--cream); font-family: 'DM Sans', sans-serif; }
+.page-shell { min-height: 100vh; padding: 54px 20px 28px; overflow: hidden; position: relative; background: #fff; }
+.hero-card, .result-card { width: min(100%, 680px); margin: auto; position: relative; z-index: 1; }
+.hero-card { text-align: center; color: var(--ink); }
+.brand-mark { width: min(100%, 278px); height: 55px; margin: 0 auto 28px; display: grid; place-items: center; }
+.brand-mark img { width: 100%; height: auto; object-fit: contain; }
+.eyebrow, .result-label { color: var(--red); font-size: 12px; font-weight: 700; letter-spacing: .16em; }
+.hero-card .eyebrow { color: var(--red); }
+h1, h2 { font-family: 'Space Grotesk', sans-serif; }
+h1 { font-size: clamp(42px, 8vw, 74px); line-height: .98; letter-spacing: -.06em; margin: 20px 0; }
+h1 span { color: var(--red); }
+.intro { color: var(--muted); font-size: 16px; margin: 0 auto; max-width: 390px; line-height: 1.6; }
+.search-form { text-align: left; margin: 36px auto 0; background: white; padding: 10px 10px 10px 20px; border: 1px solid var(--line); border-radius: 8px; }
+.search-form label { display: block; color: var(--muted); font-size: 12px; font-weight: 700; margin-bottom: 5px; }
+.input-row { display: flex; gap: 10px; }
+input { border: 0; outline: 0; width: 100%; min-width: 0; font: inherit; font-size: 18px; color: var(--ink); background: transparent; }
+button { border: 0; background: var(--red); color: white; font: inherit; font-weight: 700; padding: 15px 21px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
+button:hover { background: var(--deep-red); } button:disabled { opacity: .65; cursor: wait; }
+.form-message { color: var(--red); font-size: 13px; margin: 9px 0 0; }
+.result-card { margin-top: 34px; text-align: center; border: 1px solid var(--line); border-radius: 8px; padding: 34px 26px 25px; background: white; animation: rise .35s ease both; }
+.qualified { border-top: 6px solid #f6c542; } .not-qualified { border-top: 6px solid #8d7772; }
+.result-icon { margin: -62px auto 10px; width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--red); font-size: 31px; }
+.not-qualified .result-icon { background: #8d7772; }
+.result-card h2 { margin: 7px 0; font-size: clamp(25px, 5vw, 36px); }
+.result-copy { color: var(--muted); margin: 8px auto 17px; line-height: 1.5; }
+.rank-pill { display: inline-block; background: #fff0c2; color: #8d5b00; padding: 7px 13px; border-radius: 5px; font-size: 12px; font-weight: 700; margin-bottom: 19px; }
+.rank-pill strong { margin-left: 5px; font-size: 15px; }
+.score-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; text-align: left; }
+.score-item { background: #fff8f3; border: 1px solid var(--line); border-radius: 5px; padding: 12px 9px; }
+.score-item span { display: block; color: var(--muted); font-size: 11px; margin-bottom: 4px; white-space: nowrap; }.score-item strong { font-size: 18px; }
+.total-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee3dd; margin-top: 17px; padding: 17px 4px 0; font-weight: 700; }.total-row strong { color: var(--red); font-family: 'Space Grotesk'; font-size: 29px; }
+.footer-note { color: #a19390; text-align: center; font-size: 12px; margin: 34px 0 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 600px) { .page-shell { padding-top: 34px; } .search-form { padding: 14px; } .input-row { display: block; } input { padding: 10px 0 15px; } button { width: 100%; } .score-grid { grid-template-columns: repeat(2, 1fr); }.score-item:last-child { grid-column: span 2; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
